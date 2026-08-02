@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: wsdl/sysdyne-webcrete.wsdl
+notes: >-
+  No official hosted/remote MCP server was found for Sysdyne. This is a CANDIDATE
+  tool list derived one-to-one from the WebcreteAPI SOAP operations, as a starting
+  point for wrapping the ConcreteGO API as an MCP server. Not a published server.
+server:
+  name: sysdyne-webcrete
+  transport: stdio
+tools:
+  - name: get_public_key
+    description: Retrieve the RSA public key used to encrypt credentials before login.
+    source_operation: wsdl/sysdyne-webcrete.wsdl#GetPublicKey
+  - name: login
+    description: Establish a Webcrete API session with encrypted AppID/AppKey + credentials.
+    source_operation: wsdl/sysdyne-webcrete.wsdl#Login
+  - name: login2
+    description: Alternate login operation establishing a Webcrete API session.
+    source_operation: wsdl/sysdyne-webcrete.wsdl#Login2
+  - name: process_request
+    description: Submit a Webcrete XML request (the generic ConcreteGO data operation).
+    source_operation: wsdl/sysdyne-webcrete.wsdl#ProcessRequest
+  - name: logout
+    description: Tear down the active Webcrete API session.
+    source_operation: wsdl/sysdyne-webcrete.wsdl#Logout

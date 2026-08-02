@@ -1,0 +1,21 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of sysdynetechnologies.com + api1.concretego.com
+notes: >-
+  No /.well-known/ discovery documents are published on the marketing site or the
+  API host. Recorded here for auditability; absence is a valid result and no
+  WellKnown/SecurityTxt pointer is emitted.
+hosts:
+  - host: https://sysdynetechnologies.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /llms.txt, status: 404}
+  - host: https://istrada.net
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}

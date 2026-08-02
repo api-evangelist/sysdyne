@@ -1,0 +1,34 @@
+# Sysdyne Technologies
+
+> Sysdyne Technologies (founded 1976, Stamford CT) builds cloud-native software for ready-mix concrete producers — quoting, dispatch, batch control, delivery management, invoicing, and operational analytics. Its ConcreteGO platform exposes a SOAP "Webcrete" API and full-suite interoperability so producers can integrate dispatch and batch data with ERP, accounting, and telematics systems.
+
+## APIs
+
+- [Webcrete API (SOAP)](https://api1.concretego.com/webcreteapi.asmx): ConcreteGO cloud-dispatch web service. Operations: GetPublicKey, Login, Login2, ProcessRequest, Logout. Requires a Sysdyne-issued AppID/AppKey. WSDL: https://api1.concretego.com/webcreteapi.asmx?WSDL
+
+## Specs
+
+- [WebcreteAPI WSDL](wsdl/sysdyne-webcrete.wsdl): SOAP 1.1/1.2 service definition (targetNamespace http://api.concretego.com/).
+
+## Clients & SDKs
+
+- [WebcreteAPIExplorer](https://github.com/sysdynetechnologies/WebcreteAPIExplorer): official C# example client.
+- [WebcreteAPIJavaClient](https://github.com/sysdynetechnologies/WebcreteAPIJavaClient): official Java example client.
+- [ConcreteGo.SDK](https://github.com/dev-dave-s/ConcreteGo.SDK): community (unofficial) C# SDK.
+
+## Products
+
+- [Concrete•Go](https://sysdynetechnologies.com/platform): cloud concrete dispatch.
+- [Batch•Go](https://sysdynetechnologies.com/platform): cloud-native batching control.
+- [Delivery•Go / iStrada](https://istrada.net/): delivery management, GPS e-ticketing, driver app + portal.
+- [Slabstack](https://sysdynetechnologies.com/platform): CRM and quoting.
+- [Insight•Go](https://sysdynetechnologies.com/platform): AI-powered operational analytics.
+- [QuickLink](https://sysdynetechnologies.com/platform): ERP/accounting data sync.
+
+## Docs
+
+- [Platform overview](https://sysdynetechnologies.com/platform)
+- [Integrations](https://sysdynetechnologies.com/integrations)
+- [Using Open API to Automate Business Processes](https://sysdynetechnologies.com/resources/news_or_event/using-open-api-to-automate-business-processes-through-enhanced-integrations/)
+- [Support (Freshdesk)](https://sysdynetechnologies.freshdesk.com/support/home)
+- [GitHub organization](https://github.com/sysdynetechnologies)

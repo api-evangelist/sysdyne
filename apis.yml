@@ -1,7 +1,28 @@
 aid: sysdyne
-name: sysdyne
-description: sysdyne is a company surfaced as a portfolio company of insight-partners and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/sysdyne.png
+name: Sysdyne Technologies
+description: >-
+  Sysdyne Technologies is a Stamford, Connecticut software company that has served
+  ready-mix concrete producers worldwide since 1976. Its cloud-native platform spans
+  the full production lifecycle — Slabstack quoting and CRM, Concrete-Go central
+  dispatch, Batch-Go batch automation, Delivery-Go / iStrada delivery management and
+  paperless e-ticketing, QuickLink ERP/accounting sync, and Insight-Go operational
+  analytics. Sysdyne exposes the ConcreteGO "Webcrete" SOAP web-service API plus
+  full-suite interoperability, letting producers integrate dispatch, batch, and
+  delivery data bi-directionally with ERP, accounting, and telematics systems such as
+  QuickBooks, SAP, Microsoft Dynamics, Acumatica, Samsara, and Geotab.
 url: https://raw.githubusercontent.com/api-evangelist/sysdyne/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,10 +32,32 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Concrete
+- Construction
+- Ready-Mix
+- Dispatch
+- Logistics
+- ERP Integration
+- SOAP
+- Fleet Telematics
+apis:
+- name: Webcrete API (ConcreteGO)
+  description: >-
+    SOAP web service for the ConcreteGO cloud dispatch platform. Uses an RSA
+    public-key credential exchange (GetPublicKey) and a session login
+    (Login/Login2) with a Sysdyne-issued AppID/AppKey, then submits work through a
+    generic ProcessRequest operation. WSDL published at
+    https://api1.concretego.com/webcreteapi.asmx?WSDL.
+  humanURL: https://sysdynetechnologies.com/integrations
+  baseURL: https://api1.concretego.com/webcreteapi.asmx
+  properties:
+  - type: WSDL
+    url: wsdl/sysdyne-webcrete.wsdl
+  - type: Authentication
+    url: authentication/sysdyne-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +66,32 @@ maintainers:
 common:
 - type: Website
   url: https://sysdynetechnologies.com/
+- type: GitHubOrganization
+  url: https://github.com/sysdynetechnologies
+- type: APIReference
+  url: https://api1.concretego.com/webcreteapi.asmx?WSDL
+- type: Support
+  url: https://sysdynetechnologies.freshdesk.com/support/home
+- type: Blog
+  url: https://sysdynetechnologies.com/resources
+- type: Login
+  url: https://istrada.net/app/
+- type: Packages
+  url: packages/sysdyne-packages.yml
+- type: SDKs
+  url: packages/sysdyne-packages.yml
+- type: Authentication
+  url: authentication/sysdyne-authentication.yml
+- type: DomainSecurity
+  url: security/sysdyne-domain-security.yml
+- type: Conformance
+  url: conformance/sysdyne-conformance.yml
+- type: MCPServer
+  url: mcp/sysdyne-mcp.yml
+- type: LLMsTxt
+  url: llms/sysdyne-llms.txt
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v1

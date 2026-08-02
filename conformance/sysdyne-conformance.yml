@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: derived
+source: wsdl/sysdyne-webcrete.wsdl
+notes: >-
+  Derived from the published WebcreteAPI WSDL. Sysdyne publishes no compliance /
+  certification program on its public site, so no Compliance pointer is emitted.
+standards:
+  - id: soap-1.1
+    conforms: true
+    evidence: WSDL binding uses basicHttpBinding (SOAP 1.1 over HTTP).
+  - id: soap-1.2
+    conforms: true
+    evidence: WSDL exposes a soap12:address port at https://api1.concretego.com/webcreteapi.asmx.
+  - id: ws-i-basic-profile
+    conforms: true
+    evidence: ASMX basicHttpBinding service is WS-I Basic Profile-aligned.
+  - id: rest
+    conforms: false
+    evidence: SOAP/RPC service; no RESTful resource surface published.
+  - id: oauth2
+    conforms: false
+    evidence: Session/public-key credential exchange; no OAuth2 flows in the WSDL.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: SOAP faults, not application/problem+json.

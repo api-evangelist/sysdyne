@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/sysdynetechnologies
+notes: >-
+  Sysdyne publishes no client libraries to public package registries (npm, PyPI,
+  Maven Central, NuGet). The first-party client surface for the ConcreteGO
+  "Webcrete" SOAP API is shipped as official example-client source repositories
+  in the sysdynetechnologies GitHub organization. An AppID / AppKey (issued by
+  Sysdyne) is required to authenticate against the live API.
+packages:
+  - language: csharp
+    registry: github
+    name: WebcreteAPIExplorer
+    url: https://github.com/sysdynetechnologies/WebcreteAPIExplorer
+    install: git clone https://github.com/sysdynetechnologies/WebcreteAPIExplorer
+    official: true
+    kind: example-client
+    description: >-
+      Official C# / Windows Forms example client for the ConcreteGo.com SOAP
+      Web Service API (WebcreteAPI). Ships a generated service reference against
+      https://api1.concretego.com/webcreteapi.asmx.
+  - language: java
+    registry: github
+    name: WebcreteAPIJavaClient
+    url: https://github.com/sysdynetechnologies/WebcreteAPIJavaClient
+    install: git clone https://github.com/sysdynetechnologies/WebcreteAPIJavaClient
+    official: true
+    kind: example-client
+    description: Official Java example client for the Webcrete SOAP API.
+  - language: csharp
+    registry: github
+    name: ConcreteGo.SDK
+    url: https://github.com/dev-dave-s/ConcreteGo.SDK
+    install: git clone https://github.com/dev-dave-s/ConcreteGo.SDK
+    official: false
+    kind: community-sdk
+    description: >-
+      Community (unofficial) C# SDK wrapping the ConcreteGO API. Requires an
+      AppID / AppKey requested from Sysdyne. Not maintained by Sysdyne.

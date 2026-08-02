@@ -1,0 +1,35 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://api1.concretego.com/webcreteapi.asmx?WSDL +
+  https://github.com/sysdynetechnologies/WebcreteAPIExplorer
+notes: >-
+  The ConcreteGO "Webcrete" API is a SOAP web service that does not declare its
+  security in an OpenAPI document, so the auth profile below is reconstructed
+  from the published WSDL operations and the official example clients rather than
+  derived mechanically. Authentication is a public-key credential exchange
+  followed by a session login: the client fetches an RSA public key
+  (GetPublicKey), encrypts its AppID/AppKey + user credentials, calls Login /
+  Login2 to obtain a session, and then submits work through ProcessRequest until
+  Logout. Producer-issued AppID / AppKey is a prerequisite for access.
+summary:
+  types: [session, publicKeyExchange]
+  transport: SOAP (basicHttpBinding, SOAP 1.1 + 1.2)
+  api_key_in: [credential-exchange]
+  oauth2_flows: []
+schemes:
+  - name: WebcretePublicKeyExchange
+    type: publicKey
+    description: >-
+      RSA public key retrieved via the GetPublicKey operation, used to encrypt
+      AppID/AppKey and user credentials before login.
+    operation: GetPublicKey
+    sources: [wsdl/sysdyne-webcrete.wsdl]
+  - name: WebcreteSessionLogin
+    type: session
+    description: >-
+      Session established via Login / Login2 using the AppID/AppKey issued by
+      Sysdyne; the resulting session context authorizes ProcessRequest calls and
+      is torn down by Logout.
+    operations: [Login, Login2, Logout]
+    sources: [wsdl/sysdyne-webcrete.wsdl]
